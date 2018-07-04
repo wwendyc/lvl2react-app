@@ -1,13 +1,15 @@
 ## Level 2 React App
 
+Playing with React Features
+
 ### Built with
 * Create React App
 * React
 * React Spring
 
-### Elements
+### Features
 * Render props
-* Fragments
+* React Fragments
 * Reusable portal
 * React Context API
 * React Spring transitions

@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import Toggle from './ToggleRenderProps'
+import Toggle from './ToggleRPC'
 
 class App extends Component {
   render() {
@@ -14,22 +14,23 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Toggle
-          render={({on, toggle}) => (
-            <div>
+        <Toggle>
+          {/* Anonymous func that renders React children */}
+          {({ on, toggle }) => (
+            <Fragment>
               {on && <h1>Show Me</h1>}
               <button onClick={toggle}>Show/Hide</button>
-            </div>
+            </Fragment>
           )}
-        />
-        <Toggle
+        </Toggle>
+        {/* <Toggle
           render={({ on, toggle }) => (
             <div>
               {on && <nav>nav item</nav>}
               <button onClick={toggle}>Menu</button>
             </div>
           )}
-        />
+        /> */}
       </div>
     )
   }

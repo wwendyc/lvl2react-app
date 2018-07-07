@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import Toggle from './ToggleRPC'
+import { Toggle } from 'Utilities'
+import { Modal } from 'Elements'
 
 class App extends Component {
   render() {
@@ -11,18 +12,19 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
         <Toggle>
           {/* Anonymous func that renders React children */}
           {({ on, toggle }) => (
             <Fragment>
-              {on && <h1>Show Me</h1>}
-              <button onClick={toggle}>Show/Hide</button>
+              <button onClick={toggle}>Login</button>
+              <Modal on={on} toggle={toggle}>
+                <h1>What's up this is a modal. Pretty sweet!</h1>
+              </Modal>
             </Fragment>
           )}
         </Toggle>
+
         {/* <Toggle
           render={({ on, toggle }) => (
             <div>
